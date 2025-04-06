@@ -8,7 +8,7 @@ from logging.handlers import RotatingFileHandler
 load_dotenv()
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7229764709:AAHTQXoGlGjJ4dIum2ZIEOZ-aQQs1xOtFDg")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7194605933:AAEb8vSKfqeH8YBT7JN5usKgxlVl6jGBUuk")
 
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "23448804"))
@@ -16,8 +16,8 @@ APP_ID = int(os.environ.get("APP_ID", "23448804"))
 #Your API Hash from my.telegram.org
 API_HASH = os.environ.get("API_HASH", "07a3c7834916cb7a4318026dbf0eac28")
 
-#Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002651854723"))
+#Your db channel Id (I have used file store channel's id)
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002357848749"))
 
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "6476946240"))
@@ -27,26 +27,26 @@ PORT = os.environ.get("PORT", "8080")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://monish280720:hsUe1KPZd5wh5hfD@cluster0.x2rr3kl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_NAME = os.environ.get("DATABASE_NAME", "monish280720")
+DB_NAME = os.environ.get("DATABASE_NAME", "filestore")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002312433199"))
 JOIN_REQUEST_ENABLE = os.environ.get("JOIN_REQUEST_ENABLED", None)
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
 START_PIC = os.environ.get("START_PIC","")
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
+START_MSG = os.environ.get("START_MESSAGE", "Hello {username}\n\nI can store private files in Specified Channel and other users can access it from special link.")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "").split()):
+    for x in (os.environ.get("ADMINS", "6476946240").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
 #Force sub message 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel to use me\n\nKindly Please join Channel</b>")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
