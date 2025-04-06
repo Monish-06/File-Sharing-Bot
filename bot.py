@@ -1,5 +1,21 @@
 #(©)Codexbotz
 
+import threading
+import requests
+import time
+ 
+def keep_alive():
+    while True:
+        try:
+            requests.get("https://exotic-darb-monish2807-df2d5a43.koyeb.app/")
+        except:
+            pass
+        time.sleep(90)  # Ping every 5 minutes
+ 
+threading.Thread(target=keep_alive, daemon=True).start()
+
+
+
 from aiohttp import web
 from plugins import web_server
 
